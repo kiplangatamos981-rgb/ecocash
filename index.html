@@ -3,64 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Youth Empowerment Project</title>
+<title>Youth Opportunity Hub</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f7f5;
-  color: #222;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f2;
+    color: #222;
 }
 
 header {
-  background: #087f23;
-  color: white;
-  text-align: center;
-  padding: 50px 20px;
+    background: #087f23;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
 }
 
 header h1 {
-  font-size: 42px;
-  margin: 0 0 15px;
+    margin: 0;
+    font-size: 34px;
 }
 
 header p {
-  font-size: 20px;
+    font-size: 18px;
+    margin-top: 12px;
 }
 
 .container {
-  max-width: 850px;
-  margin: 30px auto;
-  padding: 0 18px;
+    max-width: 700px;
+    margin: 25px auto;
+    padding: 0 18px;
 }
 
 .card {
-  background: white;
-  border-radius: 24px;
-  padding: 30px;
-  margin-bottom: 25px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    background: white;
+    border-radius: 25px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
 }
 
-.card h2 {
-  color: #087f23;
+h2 {
+    color: #087f23;
+    font-size: 28px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 .button {
-  display: block;
-  background: #087f23;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    padding: 18px;
+    background: #08a63c;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #078d34;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 16px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 17px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 8px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.notice {
+    background: #eef8f0;
+    border-left: 5px solid #087f23;
+    padding: 15px;
+    margin-top: 20px;
 }
 
 footer {
-  text-align: center;
-  padding: 30px;
+    text-align: center;
+    padding: 25px;
+    color: #666;
 }
 </style>
 </head>
@@ -68,43 +121,202 @@ footer {
 <body>
 
 <header>
-  <h1>Youth Empowerment Project</h1>
-  <p>Information • Opportunities • Support</p>
+    <h1>Youth Opportunity Hub</h1>
+    <p>Skills • Opportunities • Business Support</p>
 </header>
 
 <div class="container">
 
-  <div class="card">
-    <h2>Welcome 👋</h2>
-    <p>
-      Welcome to our independent youth empowerment project.
-      We share useful information about opportunities and resources
-      for young people.
-    </p>
+    <!-- HOME -->
+    <section id="home" class="page active">
 
-    <a class="button" href="#opportunities">Explore Opportunities</a>
-  </div>
+        <div class="card">
+            <h2>Welcome</h2>
 
-  <div class="card" id="opportunities">
-    <h2>Opportunities for Youth</h2>
-    <p>
-      Discover legitimate opportunities that can help you develop
-      your skills, grow your ideas, and build your future.
-    </p>
-  </div>
+            <p>
+                Discover information about youth skills,
+                entrepreneurship, jobs and other opportunities.
+            </p>
 
-  <div class="card">
-    <h2>What We Share</h2>
-    <p>📚 Skills — Learning and training</p>
-    <p>💼 Jobs — Information about legitimate opportunities</p>
-    <p>🚀 Business — Resources for young entrepreneurs</p>
-    <p>🤝 Support — Useful information and guidance</p>
-  </div>
+            <a href="#apply" class="button" onclick="showPage('apply')">
+                Explore Opportunities
+            </a>
+        </div>
 
-  <div class="card">
-    <h2>Important Notice</h2>
-    <p>
-      This is an independent information project. It is not an
-      official government website and does not process government
-      payments or request sensitive information.
-    </
+        <div class="card">
+            <h2>Opportunities for Youth</h2>
+
+            <p>
+                Find useful resources that can help you
+                develop your skills, grow your ideas and
+                build your future.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>What We Share</h2>
+
+            <p>📚 Skills — Learning and training</p>
+            <p>💼 Jobs — Information about opportunities</p>
+            <p>🚀 Business — Resources for entrepreneurs</p>
+            <p>🤝 Support — Useful information and guidance</p>
+
+            <button class="button" onclick="showPage('apply')">
+                Start Application
+            </button>
+        </div>
+
+        <div class="card">
+            <h2>Important Notice</h2>
+
+            <div class="notice">
+                This is an independent youth information
+                project. It is not an official government
+                website.
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- APPLICATION -->
+    <section id="apply" class="page">
+
+        <div class="card">
+
+            <h2>Opportunity Application</h2>
+
+            <p>
+                Complete the form below to register your
+                interest in receiving information about
+                available opportunities.
+            </p>
+
+            <form onsubmit="submitApplication(event)">
+
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label>Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+                <label>Age</label>
+                <input
+                    type="number"
+                    id="age"
+                    placeholder="Enter your age"
+                    min="18"
+                    required
+                >
+
+                <label>County</label>
+                <select id="county" required>
+                    <option value="">Select your county</option>
+                    <option>Nairobi</option>
+                    <option>Nakuru</option>
+                    <option>Uasin Gishu</option>
+                    <option>Kericho</option>
+                    <option>Kisumu</option>
+                    <option>Kiambu</option>
+                    <option>Mombasa</option>
+                    <option>Other</option>
+                </select>
+
+                <label>Area of Interest</label>
+                <select id="interest" required>
+                    <option value="">Select an option</option>
+                    <option>Business</option>
+                    <option>Skills Training</option>
+                    <option>Employment</option>
+                    <option>Entrepreneurship</option>
+                </select>
+
+                <button type="submit" class="button">
+                    Submit Application
+                </button>
+
+            </form>
+
+            <button
+                class="button"
+                onclick="showPage('home')"
+                style="background:#777;">
+                Back
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONFIRMATION -->
+    <section id="success" class="page">
+
+        <div class="card">
+
+            <h2>Application Received</h2>
+
+            <p id="successMessage"></p>
+
+            <div class="notice">
+                Thank you for your interest. This demo does
+                not request payment or sensitive financial
+                information.
+            </div>
+
+            <button class="button" onclick="showPage('home')">
+                Return Home
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+    Youth Opportunity Hub © 2026
+</footer>
+
+
+<script>
+
+function showPage(page) {
+
+    document.querySelectorAll(".page").forEach(function(section) {
+        section.classList.remove("active");
+    });
+
+    document.getElementById(page).classList.add("active");
+
+    window.scrollTo(0, 0);
+}
+
+
+function submitApplication(event) {
+
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+
+    document.getElementById("successMessage").innerText =
+        "Thank you, " + name +
+        ". Your application has been received.";
+
+    showPage("success");
+}
+
+</script>
+
+</body>
+</html>

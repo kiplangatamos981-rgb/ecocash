@@ -17,27 +17,33 @@ header {
   background: #087f23;
   color: white;
   text-align: center;
-  padding: 35px 20px;
+  padding: 50px 20px;
 }
 
 header h1 {
-  font-size: 32px;
-  margin: 0 0 10px;
+  font-size: 42px;
+  margin: 0 0 15px;
 }
 
 header p {
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 0 18px;
 }
 
 .card {
   background: white;
-  margin: 25px 15px;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 3px 12px #ccc;
+  border-radius: 24px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-h2 {
+.card h2 {
   color: #087f23;
 }
 
@@ -47,16 +53,14 @@ h2 {
   color: white;
   text-align: center;
   padding: 16px;
-  border-radius: 12px;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 20px;
 }
 
-.notice {
-  background: #fff3cd;
-  padding: 15px;
-  border-radius: 10px;
+footer {
+  text-align: center;
+  padding: 30px;
 }
 </style>
 </head>
@@ -68,37 +72,39 @@ h2 {
   <p>Information • Opportunities • Support</p>
 </header>
 
-<div class="card">
-  <h2>Welcome</h2>
-  <p>
-    Welcome to our independent youth empowerment project.
-    Explore information about opportunities and support available
-    to young people.
-  </p>
+<div class="container">
 
-  <a class="button" href="#about">Learn More</a>
-</div>
+  <div class="card">
+    <h2>Welcome 👋</h2>
+    <p>
+      Welcome to our independent youth empowerment project.
+      We share useful information about opportunities and resources
+      for young people.
+    </p>
 
-<div class="card" id="about">
-  <h2>About the Project</h2>
-  <p>
-    Our goal is to share useful information and help young people
-    discover legitimate opportunities.
-  </p>
-</div>
-
-<div class="card">
-  <h2>Important Notice</h2>
-  <div class="notice">
-    This is an independent demonstration website. It is not a
-    government website and does not guarantee financial payments.
+    <a class="button" href="#opportunities">Explore Opportunities</a>
   </div>
-</div>
 
-<div class="card">
-  <h2>Contact</h2>
-  <p>Email: example@email.com</p>
-</div>
+  <div class="card" id="opportunities">
+    <h2>Opportunities for Youth</h2>
+    <p>
+      Discover legitimate opportunities that can help you develop
+      your skills, grow your ideas, and build your future.
+    </p>
+  </div>
 
-</body>
-</html>
+  <div class="card">
+    <h2>What We Share</h2>
+    <p>📚 Skills — Learning and training</p>
+    <p>💼 Jobs — Information about legitimate opportunities</p>
+    <p>🚀 Business — Resources for young entrepreneurs</p>
+    <p>🤝 Support — Useful information and guidance</p>
+  </div>
+
+  <div class="card">
+    <h2>Important Notice</h2>
+    <p>
+      This is an independent information project. It is not an
+      official government website and does not process government
+      payments or request sensitive information.
+    </

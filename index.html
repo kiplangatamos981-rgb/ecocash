@@ -3,132 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loan Application</title>
+<title>Eco Quick Loans</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f8fa;
+  color:#17212b;
 }
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f1f4f7;
-    color: #555;
+header{
+  background:#fff;
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 10px #00000010;
 }
-
-header {
-    background: #16b889;
-    color: white;
-    text-align: center;
-    padding: 18px;
+.logo{
+  font-size:21px;
+  font-weight:800;
+  color:#087f5b;
 }
-
-header h1 {
-    margin: 0;
-    font-size: 24px;
+.menu{font-size:25px}
+.container{
+  max-width:600px;
+  margin:auto;
+  padding:35px 20px;
 }
-
-.page {
-    max-width: 620px;
-    margin: 25px auto;
-    padding: 25px;
+.hero{
+  background:linear-gradient(135deg,#087f5b,#13b879);
+  color:white;
+  border-radius:22px;
+  padding:35px 25px;
+  text-align:center;
 }
-
-.card {
-    background: white;
-    border-radius: 24px;
-    padding: 35px 25px;
-    text-align: center;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+.hero h1{
+  font-size:32px;
+  margin-bottom:14px;
 }
-
-.check {
-    width: 90px;
-    height: 90px;
-    margin: 0 auto 25px;
-    background: #16b889;
-    border-radius: 50%;
-    color: white;
-    font-size: 58px;
-    line-height: 90px;
+.hero p{
+  font-size:16px;
+  line-height:1.5;
+  opacity:.95;
 }
-
-h2 {
-    color: #16b889;
-    font-size: 34px;
-    margin: 10px 0 20px;
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:20px 0;
 }
-
-p {
-    font-size: 18px;
-    line-height: 1.7;
+.feature{
+  background:white;
+  padding:17px 8px;
+  border-radius:14px;
+  text-align:center;
+  font-size:13px;
+  box-shadow:0 3px 12px #00000008;
 }
-
-.form {
-    display: none;
-    text-align: left;
+.calculator,.form-box,.success{
+  background:white;
+  border-radius:20px;
+  padding:25px;
+  margin-top:20px;
+  box-shadow:0 5px 20px #00000010;
 }
-
-.form h2 {
-    text-align: center;
+h2{margin-bottom:20px}
+label{
+  display:block;
+  margin:15px 0 7px;
+  font-weight:600;
 }
-
-label {
-    display: block;
-    margin-top: 18px;
-    font-weight: bold;
-    color: #333;
+input,select{
+  width:100%;
+  padding:14px;
+  border:1px solid #d7dfe3;
+  border-radius:10px;
+  font-size:16px;
+  background:white;
 }
-
-input,
-select {
-    width: 100%;
-    padding: 14px;
-    margin-top: 7px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
+.payment{
+  background:#eefaf5;
+  padding:18px;
+  border-radius:12px;
+  margin-top:15px;
 }
-
-button {
-    width: 100%;
-    border: none;
-    border-radius: 9px;
-    padding: 15px;
-    margin-top: 25px;
-    background: #16b889;
-    color: white;
-    font-size: 17px;
-    font-weight: bold;
+.payment strong{
+  font-size:25px;
+  color:#087f5b;
 }
-
-.secondary {
-    background: white;
-    color: #555;
-    border: 2px solid #ddd;
+button{
+  width:100%;
+  border:0;
+  padding:15px;
+  border-radius:11px;
+  font-size:17px;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:20px;
 }
-
-.notice {
-    background: #f5f6f7;
-    padding: 18px;
-    border-radius: 12px;
-    margin-top: 25px;
-    font-size: 14px;
-    line-height: 1.5;
+.primary{
+  background:#087f5b;
+  color:white;
 }
-
-.success {
-    display: none;
+.secondary{
+  background:#eaf4f0;
+  color:#087f5b;
 }
-
-.success p {
-    color: #666;
+.hidden{display:none}
+.progress-text{
+  font-weight:bold;
+  color:#087f5b;
+  margin-bottom:10px;
 }
-
-.small {
-    font-size: 14px;
-    color: #777;
+.progress{
+  height:8px;
+  background:#e4e9eb;
+  border-radius:20px;
+  overflow:hidden;
+}
+.progress-bar{
+  height:100%;
+  background:#087f5b;
+  width:33%;
+}
+.success{text-align:center}
+.success-icon{
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  background:#dff7eb;
+  color:#087f5b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:40px;
+  margin:10px auto 20px;
+}
+.success p{
+  line-height:1.6;
+  color:#59656d;
+}
+.countdown{
+  margin-top:20px;
+  padding:15px;
+  background:#f1f7f4;
+  border-radius:12px;
+  color:#087f5b;
+  font-weight:bold;
+}
+footer{
+  text-align:center;
+  padding:30px 15px;
+  color:#777;
+  font-size:13px;
 }
 </style>
 </head>
@@ -136,155 +164,279 @@ button {
 <body>
 
 <header>
-    <h1>Loan Application</h1>
+  <div class="logo">Eco Quick Loans</div>
+  <div class="menu">☰</div>
 </header>
 
-<div class="page">
+<!-- HOME -->
+<section id="home">
+<div class="container">
 
-    <!-- LANDING PAGE -->
-    <div class="card" id="landing">
+  <div class="hero">
+    <h1>Get Your Loan Approved Fast</h1>
+    <p>Quick approval, competitive rates and flexible repayment terms.</p>
+    <button class="primary" onclick="showApplication()">APPLY NOW</button>
+  </div>
 
-        <h2>Quick Loan Application</h2>
+  <div class="features">
+    <div class="feature">⚡<br><b>Quick Approval</b></div>
+    <div class="feature">💰<br><b>Competitive Rates</b></div>
+    <div class="feature">📅<br><b>Flexible Terms</b></div>
+  </div>
 
-        <p>
-            Apply for a loan quickly and easily.
-            Complete the application form to get started.
-        </p>
+  <div class="calculator">
+    <h2>Loan Calculator</h2>
 
-        <button onclick="openForm()">
-            APPLY NOW
-        </button>
+    <label>Loan Amount</label>
+    <input id="amount" type="number" value="5000" min="100"
+           oninput="calculate()">
 
-        <div class="notice">
-            Never share your EcoCash PIN, OTP, password,
-            or security code with anyone.
-        </div>
+    <label>Loan Term</label>
+    <select id="term" onchange="calculate()">
+      <option value="6">6 Months</option>
+      <option value="12" selected>12 Months</option>
+      <option value="18">18 Months</option>
+      <option value="24">24 Months</option>
+    </select>
 
+    <div class="payment">
+      Estimated Monthly Payment<br>
+      <strong id="monthly">$450</strong>
     </div>
-
-
-    <!-- APPLICATION FORM -->
-    <div class="card form" id="form">
-
-        <h2>Loan Application</h2>
-
-        <form onsubmit="submitApplication(event)">
-
-            <label>Full Name</label>
-            <input
-                type="text"
-                id="name"
-                placeholder="Enter your full name"
-                required
-            >
-
-            <label>Phone Number</label>
-            <input
-                type="tel"
-                id="phone"
-                placeholder="Enter your phone number"
-                required
-            >
-
-            <label>Loan Amount</label>
-            <select id="amount" required>
-                <option value="">Select amount</option>
-                <option>$50</option>
-                <option>$100</option>
-                <option>$200</option>
-                <option>$300</option>
-                <option>$500</option>
-                <option>$1,000</option>
-            </select>
-
-            <label>Repayment Period</label>
-            <select id="term" required>
-                <option value="">Select period</option>
-                <option>6 months</option>
-                <option>12 months</option>
-                <option>18 months</option>
-                <option>24 months</option>
-            </select>
-
-            <button type="submit">
-                SUBMIT APPLICATION
-            </button>
-
-        </form>
-
-    </div>
-
-
-    <!-- SUCCESS PAGE -->
-    <div class="card success" id="success">
-
-        <div class="check">✓</div>
-
-        <h2>Loan Application Submitted</h2>
-
-        <p>
-            Your loan application has been submitted successfully.
-        </p>
-
-        <p>
-            Please wait for your application to be reviewed.
-        </p>
-
-        <div class="notice">
-            You can now open the official EcoCash app separately
-            to access your account.
-        </div>
-
-        <button onclick="openEcoCash()">
-            OPEN ECOCASH
-        </button>
-
-        <button class="secondary" onclick="location.reload()">
-            BACK TO HOME
-        </button>
-
-        <p class="small">
-            For your security, this website will never ask for
-            your EcoCash PIN or OTP.
-        </p>
-
-    </div>
+  </div>
 
 </div>
+</section>
+
+
+<!-- APPLICATION -->
+<section id="application" class="hidden">
+<div class="container">
+
+  <div class="form-box">
+    <div class="progress-text">Step <span id="stepNumber">1</span> of 3</div>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div id="step1">
+      <h2 style="margin-top:25px">Loan Application</h2>
+
+      <label>Loan Type</label>
+      <select id="loanType">
+        <option>Business Loan</option>
+        <option>Personal Loan</option>
+        <option>Emergency Loan</option>
+        <option>Education Loan</option>
+      </select>
+
+      <label>Loan Amount</label>
+      <input id="loanAmount" type="number" placeholder="Enter amount">
+
+      <label>Loan Term</label>
+      <select id="loanTerm">
+        <option>6 Months</option>
+        <option selected>12 Months</option>
+        <option>18 Months</option>
+        <option>24 Months</option>
+      </select>
+
+      <label>Purpose</label>
+      <select id="purpose">
+        <option>Business</option>
+        <option>Personal</option>
+        <option>Education</option>
+        <option>Emergency</option>
+        <option>Other</option>
+      </select>
+
+      <button class="primary" onclick="nextStep(2)">CONTINUE</button>
+    </div>
+
+
+    <!-- STEP 2 -->
+    <div id="step2" class="hidden">
+      <h2 style="margin-top:25px">Your Details</h2>
+
+      <label>Full Name</label>
+      <input id="fullName" type="text" placeholder="Enter your full name">
+
+      <label>Phone Number</label>
+      <input id="phone" type="tel" placeholder="Enter phone number">
+
+      <label>Email</label>
+      <input id="email" type="email" placeholder="Enter email address">
+
+      <button class="secondary" onclick="nextStep(1)">BACK</button>
+      <button class="primary" onclick="nextStep(3)">CONTINUE</button>
+    </div>
+
+
+    <!-- STEP 3 -->
+    <div id="step3" class="hidden">
+      <h2 style="margin-top:25px">Review Application</h2>
+
+      <p style="line-height:1.8">
+        <b>Loan Type:</b> <span id="reviewType"></span><br>
+        <b>Loan Amount:</b> $<span id="reviewAmount"></span><br>
+        <b>Loan Term:</b> <span id="reviewTerm"></span><br>
+        <b>Purpose:</b> <span id="reviewPurpose"></span><br>
+        <b>Name:</b> <span id="reviewName"></span><br>
+        <b>Phone:</b> <span id="reviewPhone"></span><br>
+        <b>Email:</b> <span id="reviewEmail"></span>
+      </p>
+
+      <button class="secondary" onclick="nextStep(2)">BACK</button>
+      <button class="primary" onclick="submitApplication()">
+        SUBMIT APPLICATION
+      </button>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+<!-- SUCCESS -->
+<section id="success" class="hidden">
+<div class="container">
+
+  <div class="success">
+    <div class="success-icon">✓</div>
+
+    <h2>Loan Application Submitted</h2>
+
+    <p>
+      Your loan application has been submitted successfully.
+      Please wait for approval. You will receive a confirmation
+      message when your application has been reviewed.
+    </p>
+
+    <div class="countdown">
+      Redirecting in <span id="count">5</span>s...
+    </div>
+
+    <button class="primary" onclick="goToNext()">
+      CONTINUE
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<footer>
+  © 2026 Eco Quick Loans. All rights reserved.
+</footer>
 
 
 <script>
 
-function openForm() {
-    document.getElementById("landing").style.display = "none";
-    document.getElementById("form").style.display = "block";
+function calculate(){
+  let amount = Number(document.getElementById("amount").value);
+  let term = Number(document.getElementById("term").value);
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+  let monthly = Math.round((amount * 1.08) / term);
+
+  document.getElementById("monthly").innerText =
+    "$" + monthly;
 }
 
-
-function submitApplication(event) {
-
-    event.preventDefault();
-
-    document.getElementById("form").style.display = "none";
-    document.getElementById("success").style.display = "block";
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+function showApplication(){
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("application").classList.remove("hidden");
+  window.scrollTo(0,0);
 }
 
+function nextStep(step){
 
-function openEcoCash() {
+  if(step === 2 && !document.getElementById("loanAmount").value){
+    alert("Please enter your loan amount.");
+    return;
+  }
 
-    window.location.href =
-        "https://www.ecocash.co.zw/";
+  if(step === 3){
+
+    if(!document.getElementById("fullName").value ||
+       !document.getElementById("phone").value){
+      alert("Please complete your details.");
+      return;
+    }
+
+    document.getElementById("reviewType").innerText =
+      document.getElementById("loanType").value;
+
+    document.getElementById("reviewAmount").innerText =
+      document.getElementById("loanAmount").value;
+
+    document.getElementById("reviewTerm").innerText =
+      document.getElementById("loanTerm").value;
+
+    document.getElementById("reviewPurpose").innerText =
+      document.getElementById("purpose").value;
+
+    document.getElementById("reviewName").innerText =
+      document.getElementById("fullName").value;
+
+    document.getElementById("reviewPhone").innerText =
+      document.getElementById("phone").value;
+
+    document.getElementById("reviewEmail").innerText =
+      document.getElementById("email").value;
+  }
+
+  document.getElementById("step1").classList.add("hidden");
+  document.getElementById("step2").classList.add("hidden");
+  document.getElementById("step3").classList.add("hidden");
+
+  document.getElementById("step"+step).classList.remove("hidden");
+
+  document.getElementById("stepNumber").innerText = step;
+  document.getElementById("progressBar").style.width =
+    (step * 33.33) + "%";
+
+  window.scrollTo(0,0);
 }
+
+function submitApplication(){
+
+  /*
+   * Telegram connection will be added securely later.
+   * Do NOT put your Telegram bot token inside this HTML file.
+   */
+
+  document.getElementById("application").classList.add("hidden");
+  document.getElementById("success").classList.remove("hidden");
+
+  window.scrollTo(0,0);
+
+  let seconds = 5;
+  let timer = setInterval(function(){
+
+    seconds--;
+    document.getElementById("count").innerText = seconds;
+
+    if(seconds <= 0){
+      clearInterval(timer);
+      goToNext();
+    }
+
+  },1000);
+}
+
+function goToNext(){
+
+  /*
+   * Put your legitimate next destination here later.
+   * Example:
+   * window.location.href = "https://your-own-domain.com/next";
+   */
+
+  alert("Your application has been received.");
+}
+
+calculate();
 
 </script>
 

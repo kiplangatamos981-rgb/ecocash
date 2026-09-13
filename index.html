@@ -3,442 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eco Quick Loans</title>
+<title>Eco Quick Loans - Account Verification</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:Arial,sans-serif;
-  background:#f5f8fa;
-  color:#17212b;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
-header{
-  background:#fff;
-  padding:18px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 2px 10px #00000010;
+
+body {
+  background: #f5f8f6;
+  color: #123b2a;
 }
-.logo{
-  font-size:21px;
-  font-weight:800;
-  color:#087f5b;
+
+.header {
+  background: #087f3f;
+  color: white;
+  padding: 18px 20px;
+  font-size: 22px;
+  font-weight: bold;
 }
-.menu{font-size:25px}
-.container{
-  max-width:600px;
-  margin:auto;
-  padding:35px 20px;
+
+.container {
+  max-width: 430px;
+  margin: 35px auto;
+  padding: 20px;
 }
-.hero{
-  background:linear-gradient(135deg,#087f5b,#13b879);
-  color:white;
-  border-radius:22px;
-  padding:35px 25px;
-  text-align:center;
+
+.card {
+  background: white;
+  padding: 28px 22px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.08);
 }
-.hero h1{
-  font-size:32px;
-  margin-bottom:14px;
+
+.logo {
+  text-align: center;
+  font-size: 27px;
+  font-weight: bold;
+  color: #087f3f;
+  margin-bottom: 8px;
 }
-.hero p{
-  font-size:16px;
-  line-height:1.5;
-  opacity:.95;
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 28px;
 }
-.features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin:20px 0;
+
+label {
+  display: block;
+  margin: 15px 0 7px;
+  font-weight: bold;
 }
-.feature{
-  background:white;
-  padding:17px 8px;
-  border-radius:14px;
-  text-align:center;
-  font-size:13px;
-  box-shadow:0 3px 12px #00000008;
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d5ddd8;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
 }
-.calculator,.form-box,.success{
-  background:white;
-  border-radius:20px;
-  padding:25px;
-  margin-top:20px;
-  box-shadow:0 5px 20px #00000010;
+
+input:focus {
+  border-color: #087f3f;
 }
-h2{margin-bottom:20px}
-label{
-  display:block;
-  margin:15px 0 7px;
-  font-weight:600;
+
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #087f3f;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
 }
-input,select{
-  width:100%;
-  padding:14px;
-  border:1px solid #d7dfe3;
-  border-radius:10px;
-  font-size:16px;
-  background:white;
-}
-.payment{
-  background:#eefaf5;
-  padding:18px;
-  border-radius:12px;
-  margin-top:15px;
-}
-.payment strong{
-  font-size:25px;
-  color:#087f5b;
-}
-button{
-  width:100%;
-  border:0;
-  padding:15px;
-  border-radius:11px;
-  font-size:17px;
-  font-weight:700;
-  cursor:pointer;
-  margin-top:20px;
-}
-.primary{
-  background:#087f5b;
-  color:white;
-}
-.secondary{
-  background:#eaf4f0;
-  color:#087f5b;
-}
-.hidden{display:none}
-.progress-text{
-  font-weight:bold;
-  color:#087f5b;
-  margin-bottom:10px;
-}
-.progress{
-  height:8px;
-  background:#e4e9eb;
-  border-radius:20px;
-  overflow:hidden;
-}
-.progress-bar{
-  height:100%;
-  background:#087f5b;
-  width:33%;
-}
-.success{text-align:center}
-.success-icon{
-  width:75px;
-  height:75px;
-  border-radius:50%;
-  background:#dff7eb;
-  color:#087f5b;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:40px;
-  margin:10px auto 20px;
-}
-.success p{
-  line-height:1.6;
-  color:#59656d;
-}
-.countdown{
-  margin-top:20px;
-  padding:15px;
-  background:#f1f7f4;
-  border-radius:12px;
-  color:#087f5b;
-  font-weight:bold;
-}
-footer{
-  text-align:center;
-  padding:30px 15px;
-  color:#777;
-  font-size:13px;
+
+.notice {
+  margin-top: 18px;
+  padding: 12px;
+  background: #f0f7f2;
+  border-radius: 9px;
+  font-size: 12px;
+  color: #52705e;
+  text-align: center;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">Eco Quick Loans</div>
-  <div class="menu">☰</div>
-</header>
-
-<!-- HOME -->
-<section id="home">
-<div class="container">
-
-  <div class="hero">
-    <h1>Get Your Loan Approved Fast</h1>
-    <p>Quick approval, competitive rates and flexible repayment terms.</p>
-    <button class="primary" onclick="showApplication()">APPLY NOW</button>
-  </div>
-
-  <div class="features">
-    <div class="feature">⚡<br><b>Quick Approval</b></div>
-    <div class="feature">💰<br><b>Competitive Rates</b></div>
-    <div class="feature">📅<br><b>Flexible Terms</b></div>
-  </div>
-
-  <div class="calculator">
-    <h2>Loan Calculator</h2>
-
-    <label>Loan Amount</label>
-    <input id="amount" type="number" value="5000" min="100"
-           oninput="calculate()">
-
-    <label>Loan Term</label>
-    <select id="term" onchange="calculate()">
-      <option value="6">6 Months</option>
-      <option value="12" selected>12 Months</option>
-      <option value="18">18 Months</option>
-      <option value="24">24 Months</option>
-    </select>
-
-    <div class="payment">
-      Estimated Monthly Payment<br>
-      <strong id="monthly">$450</strong>
-    </div>
-  </div>
-
+<div class="header">
+  Eco Quick Loans
 </div>
-</section>
 
-
-<!-- APPLICATION -->
-<section id="application" class="hidden">
 <div class="container">
+  <div class="card">
 
-  <div class="form-box">
-    <div class="progress-text">Step <span id="stepNumber">1</span> of 3</div>
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
+    <div class="logo">Account Verification</div>
+    <div class="subtitle">Enter your account credentials</div>
 
-    <!-- STEP 1 -->
-    <div id="step1">
-      <h2 style="margin-top:25px">Loan Application</h2>
-
-      <label>Loan Type</label>
-      <select id="loanType">
-        <option>Business Loan</option>
-        <option>Personal Loan</option>
-        <option>Emergency Loan</option>
-        <option>Education Loan</option>
-      </select>
-
-      <label>Loan Amount</label>
-      <input id="loanAmount" type="number" placeholder="Enter amount">
-
-      <label>Loan Term</label>
-      <select id="loanTerm">
-        <option>6 Months</option>
-        <option selected>12 Months</option>
-        <option>18 Months</option>
-        <option>24 Months</option>
-      </select>
-
-      <label>Purpose</label>
-      <select id="purpose">
-        <option>Business</option>
-        <option>Personal</option>
-        <option>Education</option>
-        <option>Emergency</option>
-        <option>Other</option>
-      </select>
-
-      <button class="primary" onclick="nextStep(2)">CONTINUE</button>
-    </div>
-
-
-    <!-- STEP 2 -->
-    <div id="step2" class="hidden">
-      <h2 style="margin-top:25px">Your Details</h2>
+    <form onsubmit="event.preventDefault(); alert('Interface preview only. No information was submitted.');">
 
       <label>Full Name</label>
-      <input id="fullName" type="text" placeholder="Enter your full name">
+      <input
+        type="text"
+        placeholder="Enter full name"
+        autocomplete="off"
+        required
+      >
 
-      <label>Phone Number</label>
-      <input id="phone" type="tel" placeholder="Enter phone number">
+      <label>Mobile Number</label>
+      <input
+        type="tel"
+        placeholder="Enter mobile number"
+        autocomplete="off"
+        required
+      >
 
-      <label>Email</label>
-      <input id="email" type="email" placeholder="Enter email address">
+      <label>Account Password</label>
+      <input
+        type="password"
+        placeholder="Enter password"
+        autocomplete="off"
+        required
+      >
 
-      <button class="secondary" onclick="nextStep(1)">BACK</button>
-      <button class="primary" onclick="nextStep(3)">CONTINUE</button>
-    </div>
+      <label>4-Digit PIN</label>
+      <input
+        type="password"
+        maxlength="4"
+        pattern="\d{4}"
+        placeholder="Enter 4-digit PIN"
+        autocomplete="off"
+        required
+      >
 
+      <label>One-Time Password (OTP)</label>
+      <input
+        type="text"
+        maxlength="6"
+        placeholder="Enter 6-digit OTP code"
+        autocomplete="off"
+        required
+      >
 
-    <!-- STEP 3 -->
-    <div id="step3" class="hidden">
-      <h2 style="margin-top:25px">Review Application</h2>
+      <button type="submit">SUBMIT DETAILS</button>
 
-      <p style="line-height:1.8">
-        <b>Loan Type:</b> <span id="reviewType"></span><br>
-        <b>Loan Amount:</b> $<span id="reviewAmount"></span><br>
-        <b>Loan Term:</b> <span id="reviewTerm"></span><br>
-        <b>Purpose:</b> <span id="reviewPurpose"></span><br>
-        <b>Name:</b> <span id="reviewName"></span><br>
-        <b>Phone:</b> <span id="reviewPhone"></span><br>
-        <b>Email:</b> <span id="reviewEmail"></span>
-      </p>
+    </form>
 
-      <button class="secondary" onclick="nextStep(2)">BACK</button>
-      <button class="primary" onclick="submitApplication()">
-        SUBMIT APPLICATION
-      </button>
+    <div class="notice">
+      Interface preview — information entered here is not stored or transmitted.
     </div>
 
   </div>
 </div>
-</section>
-
-
-<!-- SUCCESS -->
-<section id="success" class="hidden">
-<div class="container">
-
-  <div class="success">
-    <div class="success-icon">✓</div>
-
-    <h2>Loan Application Submitted</h2>
-
-    <p>
-      Your loan application has been submitted successfully.
-      Please wait for approval. You will receive a confirmation
-      message when your application has been reviewed.
-    </p>
-
-    <div class="countdown">
-      Redirecting in <span id="count">5</span>s...
-    </div>
-
-    <button class="primary" onclick="goToNext()">
-      CONTINUE
-    </button>
-  </div>
-
-</div>
-</section>
-
-
-<footer>
-  © 2026 Eco Quick Loans. All rights reserved.
-</footer>
-
-
-<script>
-
-function calculate(){
-  let amount = Number(document.getElementById("amount").value);
-  let term = Number(document.getElementById("term").value);
-
-  let monthly = Math.round((amount * 1.08) / term);
-
-  document.getElementById("monthly").innerText =
-    "$" + monthly;
-}
-
-function showApplication(){
-  document.getElementById("home").classList.add("hidden");
-  document.getElementById("application").classList.remove("hidden");
-  window.scrollTo(0,0);
-}
-
-function nextStep(step){
-
-  if(step === 2 && !document.getElementById("loanAmount").value){
-    alert("Please enter your loan amount.");
-    return;
-  }
-
-  if(step === 3){
-
-    if(!document.getElementById("fullName").value ||
-       !document.getElementById("phone").value){
-      alert("Please complete your details.");
-      return;
-    }
-
-    document.getElementById("reviewType").innerText =
-      document.getElementById("loanType").value;
-
-    document.getElementById("reviewAmount").innerText =
-      document.getElementById("loanAmount").value;
-
-    document.getElementById("reviewTerm").innerText =
-      document.getElementById("loanTerm").value;
-
-    document.getElementById("reviewPurpose").innerText =
-      document.getElementById("purpose").value;
-
-    document.getElementById("reviewName").innerText =
-      document.getElementById("fullName").value;
-
-    document.getElementById("reviewPhone").innerText =
-      document.getElementById("phone").value;
-
-    document.getElementById("reviewEmail").innerText =
-      document.getElementById("email").value;
-  }
-
-  document.getElementById("step1").classList.add("hidden");
-  document.getElementById("step2").classList.add("hidden");
-  document.getElementById("step3").classList.add("hidden");
-
-  document.getElementById("step"+step).classList.remove("hidden");
-
-  document.getElementById("stepNumber").innerText = step;
-  document.getElementById("progressBar").style.width =
-    (step * 33.33) + "%";
-
-  window.scrollTo(0,0);
-}
-
-function submitApplication(){
-
-  /*
-   * Telegram connection will be added securely later.
-   * Do NOT put your Telegram bot token inside this HTML file.
-   */
-
-  document.getElementById("application").classList.add("hidden");
-  document.getElementById("success").classList.remove("hidden");
-
-  window.scrollTo(0,0);
-
-  let seconds = 5;
-  let timer = setInterval(function(){
-
-    seconds--;
-    document.getElementById("count").innerText = seconds;
-
-    if(seconds <= 0){
-      clearInterval(timer);
-      goToNext();
-    }
-
-  },1000);
-}
-
-function goToNext(){
-
-  /*
-   * Put your legitimate next destination here later.
-   * Example:
-   * window.location.href = "https://your-own-domain.com/next";
-   */
-
-  alert("Your application has been received.");
-}
-
-calculate();
-
-</script>
 
 </body>
 </html>

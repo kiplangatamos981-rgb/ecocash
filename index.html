@@ -1,195 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loan Application</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Application</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f1f3f5;
-      color: #222;
-    }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f4f7;
+    color: #555;
+}
 
-    header {
-      background: white;
-      padding: 18px 25px;
-      font-size: 28px;
-      font-weight: bold;
-      border-bottom: 1px solid #ddd;
-    }
+header {
+    background: #16b889;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
 
-    .logo {
-      color: #4267c9;
-    }
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
 
-    main {
-      max-width: 650px;
-      margin: 60px auto;
-      background: white;
-      padding: 35px;
-      border-radius: 22px;
-    }
+.page {
+    max-width: 620px;
+    margin: 25px auto;
+    padding: 25px;
+}
 
-    h1 {
-      text-align: center;
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
 
-    .subtitle {
-      text-align: center;
-      color: #666;
-      font-size: 20px;
-      margin-bottom: 40px;
-    }
+.check {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 25px;
+    background: #16b889;
+    border-radius: 50%;
+    color: white;
+    font-size: 58px;
+    line-height: 90px;
+}
 
-    .calculator {
-      background: #f7f8fa;
-      padding: 30px;
-      border-radius: 18px;
-    }
+h2 {
+    color: #16b889;
+    font-size: 34px;
+    margin: 10px 0 20px;
+}
 
-    h2 {
-      margin-top: 0;
-    }
+p {
+    font-size: 18px;
+    line-height: 1.7;
+}
 
-    .row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 20px;
-      margin: 25px 0 10px;
-    }
+.form {
+    display: none;
+    text-align: left;
+}
 
-    .value {
-      color: #526fc8;
-      font-weight: bold;
-    }
+.form h2 {
+    text-align: center;
+}
 
-    input[type="range"] {
-      width: 100%;
-    }
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: bold;
+    color: #333;
+}
 
-    .payment {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 15px;
-      padding: 25px;
-      margin-top: 30px;
-      font-size: 21px;
-    }
+input,
+select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 7px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
 
-    .payment strong {
-      color: #526fc8;
-      font-size: 34px;
-      float: right;
-    }
+button {
+    width: 100%;
+    border: none;
+    border-radius: 9px;
+    padding: 15px;
+    margin-top: 25px;
+    background: #16b889;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
 
-    button {
-      width: 100%;
-      margin-top: 30px;
-      padding: 20px;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(90deg, #526fd0, #a14ed0);
-      color: white;
-      font-size: 21px;
-      font-weight: bold;
-    }
+.secondary {
+    background: white;
+    color: #555;
+    border: 2px solid #ddd;
+}
 
-    @media (max-width: 600px) {
-      main {
-        margin: 30px 15px;
-        padding: 25px;
-      }
+.notice {
+    background: #f5f6f7;
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 1.5;
+}
 
-      h1 {
-        font-size: 34px;
-      }
-    }
-  </style>
+.success {
+    display: none;
+}
+
+.success p {
+    color: #666;
+}
+
+.small {
+    font-size: 14px;
+    color: #777;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <span class="logo">Your Loan</span>
+    <h1>Loan Application</h1>
 </header>
 
-<main>
+<div class="page">
 
-  <h1>Get Your Loan Approved Fast</h1>
+    <!-- LANDING PAGE -->
+    <div class="card" id="landing">
 
-  <div class="subtitle">
-    Quick application • Flexible terms • Clear repayment
-  </div>
+        <h2>Quick Loan Application</h2>
 
-  <div class="calculator">
+        <p>
+            Apply for a loan quickly and easily.
+            Complete the application form to get started.
+        </p>
 
-    <h2>Loan Calculator</h2>
+        <button onclick="openForm()">
+            APPLY NOW
+        </button>
 
-    <div class="row">
-      <span>Loan Amount</span>
-      <span class="value">$<span id="amount">5000</span></span>
+        <div class="notice">
+            Never share your EcoCash PIN, OTP, password,
+            or security code with anyone.
+        </div>
+
     </div>
 
-    <input
-      type="range"
-      id="amountSlider"
-      min="100"
-      max="5000"
-      step="100"
-      value="5000"
-    >
 
-    <div class="row">
-      <span>Loan Term</span>
-      <span class="value"><span id="term">12</span> months</span>
+    <!-- APPLICATION FORM -->
+    <div class="card form" id="form">
+
+        <h2>Loan Application</h2>
+
+        <form onsubmit="submitApplication(event)">
+
+            <label>Full Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label>Phone Number</label>
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter your phone number"
+                required
+            >
+
+            <label>Loan Amount</label>
+            <select id="amount" required>
+                <option value="">Select amount</option>
+                <option>$50</option>
+                <option>$100</option>
+                <option>$200</option>
+                <option>$300</option>
+                <option>$500</option>
+                <option>$1,000</option>
+            </select>
+
+            <label>Repayment Period</label>
+            <select id="term" required>
+                <option value="">Select period</option>
+                <option>6 months</option>
+                <option>12 months</option>
+                <option>18 months</option>
+                <option>24 months</option>
+            </select>
+
+            <button type="submit">
+                SUBMIT APPLICATION
+            </button>
+
+        </form>
+
     </div>
 
-    <input
-      type="range"
-      id="termSlider"
-      min="6"
-      max="60"
-      step="6"
-      value="12"
-    >
 
-    <div class="payment">
-      Monthly Payment
-      <strong>$<span id="payment">450</span></strong>
+    <!-- SUCCESS PAGE -->
+    <div class="card success" id="success">
+
+        <div class="check">✓</div>
+
+        <h2>Loan Application Submitted</h2>
+
+        <p>
+            Your loan application has been submitted successfully.
+        </p>
+
+        <p>
+            Please wait for your application to be reviewed.
+        </p>
+
+        <div class="notice">
+            You can now open the official EcoCash app separately
+            to access your account.
+        </div>
+
+        <button onclick="openEcoCash()">
+            OPEN ECOCASH
+        </button>
+
+        <button class="secondary" onclick="location.reload()">
+            BACK TO HOME
+        </button>
+
+        <p class="small">
+            For your security, this website will never ask for
+            your EcoCash PIN or OTP.
+        </p>
+
     </div>
 
-  </div>
+</div>
 
-  <button onclick="applyNow()">APPLY NOW</button>
-
-</main>
 
 <script>
-  const amountSlider = document.getElementById("amountSlider");
-  const termSlider = document.getElementById("termSlider");
 
-  const amount = document.getElementById("amount");
-  const term = document.getElementById("term");
-  const payment = document.getElementById("payment");
+function openForm() {
+    document.getElementById("landing").style.display = "none";
+    document.getElementById("form").style.display = "block";
 
-  function calculate() {
-    const loan = Number(amountSlider.value);
-    const months = Number(termSlider.value);
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 
-    amount.textContent = loan.toLocaleString();
-    term.textContent = months;
 
-    // Example calculation only.
-    // Replace this with your actual disclosed loan terms.
-    const monthly = loan / months;
-    payment.textContent = Math.round(monthly).toLocaleString();
-  }
+function submitApplication(event) {
+
+    event.preventDefault();
+
+    document.getElementById("form").style.display = "none";
+    document.getElementById("success").style.display = "block";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+function openEcoCash() {
+
+    window.location.href =
+        "https://www.ecocash.co.zw/";
+}
+
+</script>
+
+</body>
+</html>
